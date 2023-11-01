@@ -1,0 +1,24 @@
+export enum EEnviromentKey {
+  // App
+  NODE_ENV = "NODE_ENV",
+  PORT = "PORT",
+  GLOBAL_PREFIX = "GLOBAL_PREFIX",
+
+  // Swagger
+  SWAGGER_PATH = "SWAGGER_PATH",
+  SWAGGER_TITLE = "SWAGGER_TITLE",
+  SWAGGER_DESCRIPTION = "SWAGGER_DESCRIPTION",
+  SWAGGER_VERSION = "SWAGGER_VERSION",
+
+  // Jwt
+  SECRET_JWT = "SECRET_JWT",
+  REFRESH_TOKEN_SECRET_JWT = "REFRESH_TOKEN_SECRET_JWT",
+
+  // Database
+  DATABASE_URL = "DATABASE_URL",
+}
+
+export enum ENodeEnvironment {
+  DEVELOPMENT = "development",
+  PRODUCTION = "production",
+}
