@@ -1,0 +1,30 @@
+name: Nestjs CI
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - develop
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: action/setup-node@v4
+        with:
+          node-version: '16'
+
+      - name: Install npm dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Prisma Client generate
+        run: npx prisma generate
+      
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run build
+        run: npm run build
