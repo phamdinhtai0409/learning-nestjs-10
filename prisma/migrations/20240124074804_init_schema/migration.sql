@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "Role" AS ENUM ('User', 'Admin', 'SuperAdmin');
+CREATE TYPE "Role" AS ENUM ('User', 'Admin');
 
 -- CreateTable
 CREATE TABLE "users" (
@@ -11,7 +11,6 @@ CREATE TABLE "users" (
     "image" TEXT,
     "address" TEXT,
     "role" "Role" NOT NULL DEFAULT 'User',
-    "token" TEXT NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
 
@@ -20,6 +19,3 @@ CREATE TABLE "users" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
-
--- CreateIndex
-CREATE UNIQUE INDEX "users_token_key" ON "users"("token");
